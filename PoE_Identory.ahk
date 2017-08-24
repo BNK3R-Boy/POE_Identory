@@ -48,7 +48,6 @@ identify_inventory:
 
       If !(row==1 AND (col==1 OR col==2))
       {
-        MouseMove, nx, ny
         PixelSearch, Px, Py, nx, ny, nx, ny, 0x080808, 10, Fast
         found1:=ErrorLevel
 
@@ -72,6 +71,8 @@ identify_inventory:
           {
             chkX:=0
           }
+
+          MouseMove, nx, ny
 
           PixelSearch, Px, Py, nx-20-chkX, ny-chkHigh, nx-15-chkX, ny, 0x0000D2, 10, Fast
           found2:=ErrorLevel
