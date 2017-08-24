@@ -34,7 +34,7 @@ Return
 
 identify_inventory:
   MouseGetPos, xpos, ypos
-  MouseMove, tlx, tly-70
+  ;MouseMove, tlx, tly-70
   ToolTip, ... abait abait ...,tlx,tly-80
   Loop, 5
   {
@@ -63,9 +63,9 @@ identify_inventory:
             chkHigh:=row*ibh
           }
 
-          If (col == 12)
+          If (col == 11) OR (col == 12)
           {
-            chkX:=ibw
+            chkX:=ibw*2
           }
           Else
           {
