@@ -100,7 +100,7 @@ identify_inventory:
   itoggle:=false
   SetTimer, identify_inventory, Off
 
-  ToolTip, ... Fettisch! ...,tlx,tly-80
+  ToolTip, ... Fettich! ...,tlx,tly-80
   Sleep, 1000
   ToolTip,
 Return
