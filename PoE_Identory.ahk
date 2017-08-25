@@ -34,7 +34,7 @@ Return
 
 identify_inventory:
   MouseGetPos, xpos, ypos
-  ;MouseMove, tlx, tly-70
+
   ToolTip, ... abait abait ...,tlx,tly-80
   Loop, 5
   {
@@ -74,7 +74,7 @@ identify_inventory:
 
           MouseMove, nx, ny
 
-          PixelSearch, Px, Py, nx-20-chkX, ny-chkHigh, nx-15-chkX, ny, 0x0000D2, 10, Fast
+          PixelSearch, Px, Py, nx-20-chkX, ny-chkHigh, nx-10-chkX, ny, 0x0000D2, 10, Fast
           found2:=ErrorLevel
 
           IF !found2
