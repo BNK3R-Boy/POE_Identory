@@ -48,7 +48,7 @@ identify_inventory:
 
       If !(row==1 AND (col==1 OR col==2))
       {
-        PixelSearch, Px, Py, nx, ny, nx, ny, 0x080808, 10, Fast
+        PixelSearch, Px, Py, nx, ny, nx, ny, 0x080808, 3, Fast
         found1:=ErrorLevel
 
         If found1 AND itoggle
