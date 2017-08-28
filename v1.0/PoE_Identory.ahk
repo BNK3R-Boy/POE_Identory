@@ -36,6 +36,7 @@ identify_inventory:
   MouseGetPos, xpos, ypos
 
   ToolTip, ... abait abait ...,tlx,tly-80
+  Sleep, 333
   Send, {Shift Down}
   MouseClick, right, tlx, tly
   Sleep, worldsleeps
@@ -78,12 +79,12 @@ identify_inventory:
 
           MouseMove, nx, ny
 
+          Sleep, 50
           PixelSearch, Px, Py, nx-20-chkX, ny-chkHigh, nx-10-chkX, ny, 0x0000D2, 10, Fast
           found2:=ErrorLevel
 
           IF !found2
           {
-            Send, {Shift Down}
             MouseClick, left, nx, ny
             Sleep, worldsleeps
           }
@@ -99,7 +100,6 @@ identify_inventory:
   }
 
   Send, {Shift Up}
-  MouseClick, left, tlx, tly-ibh
   MouseMove, xpos, ypos
 
   itoggle:=false
