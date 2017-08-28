@@ -52,7 +52,7 @@ identify_inventory:
 
       If !(row==1 AND (col==1 OR col==2))
       {
-        PixelSearch, Px, Py, nx, ny, nx, ny, 0x080808, 3, Fast
+        PixelSearch, Px, Py, nx, ny, nx, ny, 0x080808, 5, Fast
         found1:=ErrorLevel
 
         If found1 AND itoggle
@@ -99,7 +99,7 @@ identify_inventory:
   }
 
   Send, {Shift Up}
-  MouseClick, left, tlx, 0
+  MouseClick, left, tlx, tly-ibh
   MouseMove, xpos, ypos
 
   itoggle:=false
