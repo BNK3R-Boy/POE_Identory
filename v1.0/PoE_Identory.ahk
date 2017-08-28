@@ -6,9 +6,9 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #InstallMouseHook
 #InstallKeybdHook
 Menu, Tray, Icon, %A_ScriptDir%\poe.ico
-
 CoordMode, Mouse, Window
 CoordMode, ToolTip, Window
+SetDefaultMouseSpeed, 0
 
 Global tlx:=1293
 Global tly:=611
@@ -16,7 +16,7 @@ Global tly:=611
 Global ibw:=53
 Global ibh:=53
 
-Global worldsleeps:=100
+Global worldsleeps:=100                 ; If u have a high ping u need a higher value like 250
 Global itoggle:=false
 
 #IfWinActive, ahk_class POEWindowClass
@@ -36,6 +36,10 @@ identify_inventory:
   MouseGetPos, xpos, ypos
 
   ToolTip, ... abait abait ...,tlx,tly-80
+  Send, {Shift Down}
+  MouseClick, right, tlx, tly
+  Sleep, worldsleeps
+
   Loop, 5
   {
     row:=a_index
@@ -79,8 +83,7 @@ identify_inventory:
 
           IF !found2
           {
-            MouseClick, right, tlx, tly
-            Sleep, worldsleeps
+            Send, {Shift Down}
             MouseClick, left, nx, ny
             Sleep, worldsleeps
           }
@@ -95,6 +98,8 @@ identify_inventory:
       Break
   }
 
+  Send, {Shift Up}
+  MouseClick, left, tlx, 0
   MouseMove, xpos, ypos
 
   itoggle:=false
